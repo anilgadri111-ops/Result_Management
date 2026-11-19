@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS student_result_db;
 
 USE student_result_db;
 
--- 1. STUDENTS TABLE
+
 CREATE TABLE IF NOT EXISTS students (
     student_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS students (
     semester INT NOT NULL
 );
 
--- 2. RESULTS TABLE
+
 CREATE TABLE IF NOT EXISTS results (
     result_id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT NOT NULL,
@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS results (
     UNIQUE (student_id, subject_name)
 );
 
--- 3. USERS TABLE
 CREATE TABLE IF NOT EXISTS users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -39,7 +38,7 @@ CREATE TABLE IF NOT EXISTS users (
     role VARCHAR(20) NOT NULL
 );
 
--- DEMO LOGIN ACCOUNTS
+
 INSERT IGNORE INTO users (username, password, role)
 VALUES
 ('admin', 'admin', 'admin'),
